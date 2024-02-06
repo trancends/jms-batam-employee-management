@@ -31,8 +31,8 @@ export class ListEmployeeComponent implements AfterViewInit {
     'actions',
     // 'birthDate',
     // 'basicSalary',
-    // 'status',
-    // 'group',
+    'group',
+    'status',
     // 'description',
   ];
   dataSource = new MatTableDataSource<Employee>(EMPLOYEE_DATA);
