@@ -1,6 +1,6 @@
 # EmployeeManagement
 ## Link Deployment
-[Vercel]("https://jms-batam-employee-management.vercel.app/employee")
+[Vercel](https://jms-batam-employee-management.vercel.app/employee)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
 
