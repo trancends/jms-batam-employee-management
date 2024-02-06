@@ -4,13 +4,21 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { Employee, data } from '../data';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-list-employee',
   standalone: true,
-  imports: [MatTableModule, MatPaginatorModule, MatSortModule, MatIcon],
+  imports: [
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatIcon,
+    RouterLink,
+    MatButton,
+  ],
   templateUrl: './list-employee.component.html',
   styleUrl: './list-employee.component.css',
 })
