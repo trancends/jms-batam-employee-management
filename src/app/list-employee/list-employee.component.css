@@ -11,5 +11,11 @@ th.mat-sort-header-sorted {
 
 .tb-row:hover {
   background-color: #e8eaf6;
+}
+
+.ml-2 {
+  margin-left: 2px;
+}
+.action:hover {
   cursor: pointer;
 }

@@ -5,11 +5,12 @@ import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { Employee, data } from '../data';
 import { Router } from '@angular/router';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-list-employee',
   standalone: true,
-  imports: [MatTableModule, MatPaginatorModule, MatSortModule],
+  imports: [MatTableModule, MatPaginatorModule, MatSortModule, MatIcon],
   templateUrl: './list-employee.component.html',
   styleUrl: './list-employee.component.css',
 })
@@ -19,6 +20,7 @@ export class ListEmployeeComponent implements AfterViewInit {
     'firstName',
     'lastName',
     'email',
+    'actions',
     // 'birthDate',
     // 'basicSalary',
     // 'status',

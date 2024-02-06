@@ -1,1 +1,24 @@
-<p>detail works!</p>
+<!-- detail.component.html -->
+<button mat-button color="primary" [routerLink]="['/employee']">
+  <mat-icon>arrow_back</mat-icon>
+  Back to List Employee
+</button>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      {{ employee.username }}
+    </mat-card-title>
+    <mat-card-subtitle>{{ employee.group }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Full Name: {{ employee.firstName }} {{ employee.lastName }}</p>
+    <p>Email: {{ employee.email }}</p>
+    <p>Birth Date: {{ employee.birthDate }}</p>
+    <p>Basic Salary: Rp.{{ employee.basicSalary }}</p>
+    <p>
+      Status: <span class="emp-stat">{{ employee.status }}</span>
+    </p>
+    <!-- Add more details here as needed -->
+  </mat-card-content>
+</mat-card>
