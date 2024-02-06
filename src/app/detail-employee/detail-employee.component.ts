@@ -1,12 +1,10 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-detail-employee',
   standalone: true,
   imports: [],
   templateUrl: './detail-employee.component.html',
-  styleUrl: './detail-employee.component.css'
+  styleUrl: './detail-employee.component.css',
 })
-export class DetailEmployeeComponent {
-
-}
+export class DetailEmployeeComponent {}
