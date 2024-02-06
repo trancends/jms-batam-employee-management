@@ -12,11 +12,11 @@ import { ListEmployeeComponent } from './list-employee/list-employee.component';
   // styleUrl: './app.component.css'
   template: `
     <app-header />
-    <router-outlet />
+    <div class="m-25">
+      <router-outlet />
+    </div>
   `,
-  styles: `
-
-`,
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'employee-management';
