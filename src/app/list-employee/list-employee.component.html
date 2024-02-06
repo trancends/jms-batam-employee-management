@@ -1,1 +1,75 @@
-<p>list-employee works!</p>
+<div class="mat-elevation-z8 p-10 m-20">
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    matSort
+    (matSortChange)="announceSortChange($event)"
+  >
+    <!-- Position Column -->
+    <ng-container matColumnDef="username">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by username"
+      >
+        Username
+      </th>
+      <td mat-cell *matCellDef="let employee">{{ employee.username }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="firstName">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by firstName"
+      >
+        Name
+      </th>
+      <td mat-cell *matCellDef="let employee">{{ employee.firstName }}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="lastName">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by lastName"
+      >
+        Last Name
+      </th>
+      <td mat-cell *matCellDef="let employee">{{ employee.lastName }}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="email">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by email"
+      >
+        Email
+      </th>
+      <td mat-cell *matCellDef="let employee">{{ employee.email }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr
+      class="tb-row"
+      mat-row
+      *matRowDef="let row; columns: displayedColumns"
+      (click)="selectEmployee(row)"
+    ></tr>
+  </table>
+
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements"
+  >
+  </mat-paginator>
+</div>
