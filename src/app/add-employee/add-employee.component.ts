@@ -66,12 +66,12 @@ export class AddEmployeeComponent implements OnInit {
         id: uuidv4(),
         ...this.employeeForm.value,
       };
-      // data.push(newEmployee);
+      data.push(newEmployee);
       this._snackBar.open('Employee added successfully', 'Close', {
         duration: 3000,
       });
       console.log('New employee added:', newEmployee);
-      // this.employeeForm.reset();
+      this.employeeForm.reset();
     }
   }
 }
