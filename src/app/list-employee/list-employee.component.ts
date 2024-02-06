@@ -28,11 +28,11 @@ export class ListEmployeeComponent implements AfterViewInit {
     'firstName',
     'lastName',
     'email',
+    'group',
+    'status',
     'actions',
     // 'birthDate',
     // 'basicSalary',
-    'group',
-    'status',
     // 'description',
   ];
   dataSource = new MatTableDataSource<Employee>(EMPLOYEE_DATA);
