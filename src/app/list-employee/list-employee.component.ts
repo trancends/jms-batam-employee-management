@@ -53,6 +53,13 @@ export class ListEmployeeComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
+
+  ngOnInit() {
+    const savedFilter = localStorage.getItem('employeeListFilter');
+    if (savedFilter) {
+      this.dataSource.filter = savedFilter.trim().toLowerCase();
+    }
+  }
   /** Announce the change in sort state for assistive technology. */
   announceSortChange(sortState: Sort) {
     // This example uses English messages. If your application supports
@@ -74,6 +81,7 @@ export class ListEmployeeComponent implements AfterViewInit {
     // applies filtering to all columns ('position', 'name', 'weight', 'symbol')
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+    localStorage.setItem('employeeListFilter', filterValue);
   }
 }
 
