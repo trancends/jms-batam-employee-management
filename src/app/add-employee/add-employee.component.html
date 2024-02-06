@@ -50,19 +50,19 @@
             formControlName="email"
             placeholder="Email"
           />
-          <mat-hint
-            *ngIf="
-              employeeForm.get('email').invalid &&
-              employeeForm.get('email').touched
-            "
-          >
-            <span *ngIf="employeeForm.get('email').errors.required"
-              >Email is required</span
-            >
-            <span *ngIf="employeeForm.get('email').errors.email"
-              >Invalid email format</span
-            >
-          </mat-hint>
+          @if (
+            employeeForm.get("email")?.invalid &&
+            employeeForm.get("email")?.touched
+          ) {
+            <mat-hint>
+              @if (employeeForm.get("email")?.errors?.["required"]) {
+                <span>Email is required</span>
+              }
+              @if (employeeForm.get("email")?.errors?.["email"]) {
+                <span>Invalid email format</span>
+              }
+            </mat-hint>
+          }
         </mat-form-field>
       </div>
       <div>
@@ -120,15 +120,15 @@
           <mat-label>Description</mat-label>
           <input
             matInput
-            [matDatepicker]="picker"
+            [matDatepicker]="picker2"
             id="description"
             formControlName="description"
           />
           <mat-datepicker-toggle
             matIconSuffix
-            [for]="picker"
+            [for]="picker2"
           ></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
+          <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
       </div>
 
