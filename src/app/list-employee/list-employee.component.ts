@@ -7,6 +7,8 @@ import { Employee, data } from '../data';
 import { Router, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { MatButton } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-list-employee',
@@ -18,6 +20,8 @@ import { MatButton } from '@angular/material/button';
     MatIcon,
     RouterLink,
     MatButton,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   templateUrl: './list-employee.component.html',
   styleUrl: './list-employee.component.css',
@@ -65,6 +69,11 @@ export class ListEmployeeComponent implements AfterViewInit {
   selectEmployee(employee: Employee) {
     let route = `/employee/detail/${employee.id}`;
     this.router.navigate([route]);
+  }
+  applyFilter(event: Event) {
+    // applies filtering to all columns ('position', 'name', 'weight', 'symbol')
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }
 

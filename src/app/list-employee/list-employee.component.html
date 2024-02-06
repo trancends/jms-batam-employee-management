@@ -1,3 +1,7 @@
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input />
+</mat-form-field>
 <div class="mat-elevation-z8 p-10 table-responsive">
   <button mat-button color="primary" [routerLink]="['/employee/add']">
     <mat-icon>add_circle</mat-icon>
